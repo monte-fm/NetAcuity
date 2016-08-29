@@ -46,9 +46,6 @@ COPY configs/etckeeper-hook.sh /root/etckeeper
 RUN chmod +x /root/*.sh
 RUN /root/etckeeper.sh
 
-#Install locale
-#RUN localedef -v -c -i en_US -f UTF-8 en_US.UTF-8
-
 #Dependencies for NATest.bin
 RUN yum -y install glibc.i686
 RUN yum -y install 'libstdc++.so.5'
