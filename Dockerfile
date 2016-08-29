@@ -14,6 +14,7 @@ RUN pip install --upgrade pip
 #Install supervisor
 RUN mkdir -p /etc/supervisor/conf.d
 RUN mkdir -p /var/log/supervisor
+COPY configs/supervisor/cron.conf /etc/supervisor/conf.d/cron.conf
 COPY configs/supervisor/supervisord.conf /etc/supervisor/
 RUN pip install supervisor
 
@@ -42,7 +43,6 @@ RUN echo "export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u\[\033[
 RUN mkdir -p /root/etckeeper
 COPY configs/etckeeper.sh /root
 COPY configs/etckeeper-hook.sh /root/etckeeper
-COPY configs/supervisor/*.conf /etc/supervisor/conf.d/
 RUN chmod +x /root/*.sh
 RUN /root/etckeeper.sh
 
