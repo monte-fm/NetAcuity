@@ -9,6 +9,10 @@ ssh -p5002 root@localhost
 password: root
 ```
 
+#Test NetAcuity availability to run on this machine.
+```
+cd /home && ./NATest.bin
+```
 
 # etcKeeper 
 Added etcKeeper - autocommit on exit to /etc git local repository
