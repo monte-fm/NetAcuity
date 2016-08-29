@@ -54,5 +54,11 @@ RUN yum -y install 'libstdc++.so.5'
 COPY configs/NATest.bin /home/
 RUN chmod +x /home/*.bin
 
+#Install PHP7
+RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+RUN rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+RUN yum install -y php70w
+RUN yum install -y php70w-opcache
+
 #open ports
 EXPOSE 80 22
