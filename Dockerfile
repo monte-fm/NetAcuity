@@ -19,7 +19,7 @@ RUN pip install supervisor
 
 # SSH service
 RUN yum install -y openssh-server openssh-client
-RUN mkdir /var/run/sshd
+RUN mkdir /run/sshd
 RUN echo 'root:root' | chpasswd
 #change 'pass' to your secret password
 RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
@@ -27,6 +27,7 @@ RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/ss
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 ENV NOTVISIBLE "in users profile"
 RUN echo "export VISIBLE=now" >> sudo tee -a /etc/profile
+RUN /usr/bin/ssh-keygen -A
 
 #configs bash start
 COPY configs/autostart.sh /root/autostart.sh

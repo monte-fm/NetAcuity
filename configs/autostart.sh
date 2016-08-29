@@ -1,3 +1,3 @@
 #!/bin/bash
-service ssh start
+/usr/sbin/sshd
 supervisord  -c /etc/supervisor/supervisorsd.conf
