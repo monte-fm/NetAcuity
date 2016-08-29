@@ -59,4 +59,4 @@ RUN yum install -y php70w
 RUN yum install -y php70w-opcache
 
 #open ports
-EXPOSE 80 22
+EXPOSE 80 22 5400
