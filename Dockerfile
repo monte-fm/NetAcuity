@@ -33,11 +33,10 @@ RUN /usr/bin/ssh-keygen -A
 #configs bash start
 COPY configs/autostart.sh /root/autostart.sh
 RUN  chmod +x /root/autostart.sh
-COPY configs/bash.bashrc /etc/bash.bashrc
 
 #Add colorful command line
 RUN echo "force_color_prompt=yes" >> ~/.bashrc
-RUN echo "export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u\[\033[01;33m\]@\[\033[01;36m\]\h \[\033[01;33m\]\w \[\033[01;35m\]\$ \[\033[00m\]'" >> .bashrc
+RUN echo "export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u\[\033[01;33m\]@\[\033[01;36m\]\h \[\033[01;33m\]\w \[\033[01;35m\]\$ \[\033[00m\]'" >> ~/.bashrc
 
 #etcKeeper
 RUN mkdir -p /root/etckeeper
@@ -60,3 +59,6 @@ RUN yum install -y php70w-opcache
 
 #open ports
 EXPOSE 80 22 5400
+
+#Autostart
+CMD ["/bin/bash /root/autostart.sh"]
