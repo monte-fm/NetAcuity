@@ -2,7 +2,7 @@
 
 #Create container
 ```
-docker run -i -t -d --name=NetAcuity -h=NetAcuity -p 5001:80 -p 5002:22 -p 5400:5400 cristo/netacuity
+docker run -i -t -d --name=NetAcuity -h=NetAcuity -p 5001:80 -p 5002:22 -p 5400:5400 cristo/netacuity /bin/bash
 ```
 
 #SSH

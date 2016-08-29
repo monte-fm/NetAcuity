@@ -32,6 +32,7 @@ RUN /usr/bin/ssh-keygen -A
 
 #configs bash start
 COPY configs/autostart.sh /root/autostart.sh
+COPY configs/bashrc /etc/bashrc
 RUN  chmod +x /root/autostart.sh
 
 #Add colorful command line
@@ -59,6 +60,3 @@ RUN yum install -y php70w-opcache
 
 #open ports
 EXPOSE 80 22 5400
-
-#Autostart
-CMD ["/root/autostart.sh"]
