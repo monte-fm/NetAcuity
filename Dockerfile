@@ -3,9 +3,9 @@ MAINTAINER Olexander Kutsenko <olexander.kutsenko@gmail.com>
 
 RUN yum upgrade -y
 RUN yum install -y epel-release
-RUN yum install -y git gcc
+RUN yum install -y git gcc nano
 RUN yum install -y mc curl unzip zip
-RUN yum install -y wget tmux
+RUN yum install -y wget tmux net-tools
 RUN yum install -y python-setuptools libevent-devel
 RUN yum install -y python-pip python-devel libffi-devel
 RUN easy_install gevent
