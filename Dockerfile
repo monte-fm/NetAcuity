@@ -61,4 +61,4 @@ RUN yum install -y php70w-opcache
 EXPOSE 80 22 5400
 
 #Autostart
-CMD ["/bin/bash /root/autostart.sh"]
+ENTRYPOINT ["/root/autostart.sh"]
