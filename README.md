@@ -1,17 +1,17 @@
-#Docker image on Centos:7 to run NetAcuity 
+# Docker image on Centos:7 to run NetAcuity 
 
-#Create container
+# Create container
 ```
 docker run -i -t -d --name=NetAcuity -h=NetAcuity -p 5001:80 -p 5002:22 -p 5400:5400 cristo/netacuity /bin/bash
 ```
 
-#SSH
+# SSH
 ```
 ssh -p5002 root@localhost
 password: root
 ```
 
-#Test NetAcuity availability to run on this machine.
+# Test NetAcuity availability to run on this machine.
 ```
 cd /home && ./NATest.bin
 ```
@@ -19,7 +19,7 @@ cd /home && ./NATest.bin
 # etcKeeper 
 Added etcKeeper - autocommit on exit to /etc git local repository
 
-#Origin
+# Origin
 [Docker Hub] (https://hub.docker.com/r/cristo/netacuity)
 
 [BitBucket] (https://bitbucket.org/monte-fm/netacuity)
